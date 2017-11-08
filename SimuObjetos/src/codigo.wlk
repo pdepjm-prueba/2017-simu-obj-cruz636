@@ -64,7 +64,8 @@ class MasaDeAgua{
 	var tempanosFlotando = []
 	var temperaturaAmbiente 
 	
-	constructor(){
+	constructor(listaDeTempanos){
+		listaDeTempanos.map{tempano => self.nuevoTempano(tempano)}
 		temperaturaAmbiente = 10
 	}
 	
@@ -77,7 +78,8 @@ class MasaDeAgua{
 class Rio inherits MasaDeAgua{
 	var velocidadBase
 	
-	constructor(_velocidad){
+	constructor(_velocidad,listaDeTempanos)=super(listaDeTempanos){
+		
 		velocidadBase = _velocidad
 	}
 	
@@ -88,3 +90,4 @@ class Rio inherits MasaDeAgua{
 	
 	
 }
+

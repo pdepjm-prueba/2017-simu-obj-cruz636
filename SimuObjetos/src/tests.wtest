@@ -1,7 +1,25 @@
-// Acá los tests
+import codigo.*
+import factory.*
 
-test "testX" {
+test "saber si tempano1 es azul" {
 
-	assert.that(true)
+	assert.that(tempanos.tempano1().seVeAzul())
 
 }
+
+test "Un tempano aireado no se ve azul"{
+	assert.notThat(tempanos.tempano2().seVeAzul())
+}
+
+test "Cuanto enfria el agua de un tempano"{
+	assert.equals(12,tempanos.tempano3().cuantoEnfria())
+}
+
+test "una masa de agua no  atractiva"{
+	assert.notThat(aguas.rioNegro().esAtractiva())
+}
+
+test "una masa de agua es atractiva "{
+	assert.that(aguas.lagoNahuel().esAtractiva())
+}
+
